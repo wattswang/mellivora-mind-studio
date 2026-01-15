@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: mellivora-agents
+    runtime: node
+    region: singapore
+    plan: free
+    rootDir: packages/agents
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3141
+      - key: DATABASE_URL
+        sync: false
+      - key: DEEPSEEK_API_KEY
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false

@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  @apply bg-gray-50 text-gray-900 antialiased;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400;
+}
+
+/* Custom selection color */
+::selection {
+  @apply bg-primary-100 text-primary-900;
+}
+
+/* Message markdown styling */
+.message-content {
+  @apply text-gray-800 leading-relaxed;
+}
+
+.message-content > *:first-child {
+  @apply mt-0;
+}
+
+.message-content > *:last-child {
+  @apply mb-0;
+}
+
+.message-content h1 {
+  @apply text-xl font-bold text-gray-900 mt-6 mb-3 pb-2 border-b border-gray-100;
+}
+
+.message-content h2 {
+  @apply text-lg font-semibold text-gray-900 mt-5 mb-2;
+}
+
+.message-content h3 {
+  @apply text-base font-semibold text-gray-800 mt-4 mb-2;
+}
+
+.message-content p {
+  @apply my-3;
+}
+
+.message-content ul {
+  @apply my-3 ml-4 space-y-1;
+}
+
+.message-content ol {
+  @apply my-3 ml-4 space-y-1 list-decimal;
+}
+
+.message-content li {
+  @apply text-gray-700;
+}
+
+.message-content li::marker {
+  @apply text-primary-500;
+}
+
+.message-content ul > li {
+  @apply relative pl-2;
+}
+
+.message-content ul > li::before {
+  content: '';
+  @apply absolute left-[-0.75rem] top-[0.6rem] w-1.5 h-1.5 rounded-full bg-primary-400;
+}
+
+.message-content strong {
+  @apply font-semibold text-gray-900;
+}
+
+.message-content em {
+  @apply italic text-gray-700;
+}
+
+.message-content code {
+  @apply bg-gray-100 text-primary-700 px-1.5 py-0.5 rounded text-sm font-mono;
+}
+
+.message-content pre {
+  @apply bg-gray-900 text-gray-100 p-4 rounded-xl overflow-x-auto my-4 text-sm;
+}
+
+.message-content pre code {
+  @apply bg-transparent text-gray-100 p-0;
+}
+
+.message-content blockquote {
+  @apply border-l-4 border-primary-300 bg-primary-50/50 pl-4 py-2 my-4 italic text-gray-700;
+}
+
+.message-content a {
+  @apply text-primary-600 hover:text-primary-700 underline underline-offset-2;
+}
+
+.message-content hr {
+  @apply my-6 border-gray-200;
+}
+
+.message-content table {
+  @apply w-full my-4 text-sm border-collapse;
+}
+
+.message-content th {
+  @apply bg-gray-50 font-semibold text-left px-3 py-2 border border-gray-200;
+}
+
+.message-content td {
+  @apply px-3 py-2 border border-gray-200;
+}
+
+.message-content tr:hover td {
+  @apply bg-gray-50/50;
+}
+
+/* Smooth transitions */
+a,
+button {
+  @apply transition-colors duration-150;
+}
+
+/* Focus ring styling */
+:focus-visible {
+  @apply outline-none ring-2 ring-primary-500 ring-offset-2;
+}
+
+/* Custom scrollbar for chat */
+.chat-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.chat-scroll::-webkit-scrollbar-thumb {
+  @apply bg-gray-200 rounded-full;
+}
+
+/* Loading animation keyframes */
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+/* Gradient text utility */
+.text-gradient {
+  @apply bg-gradient-to-r from-primary-500 to-primary-700 bg-clip-text text-transparent;
+}
